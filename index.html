@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +8,7 @@
     <style>
         /* Configuração de cores: fundo branco e letras pretas */
         body {
-            background-color: #2f1d1d;
+            background-color: #696969;
             color: #ffffff;
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -16,28 +17,29 @@
         }
 
         h1 {
-            background-color: red;
-            font-size: 2rem;
-            border-bottom: 2px solid #000000;
+            color: #ff0000;
+            font-size: 2.2rem;
+            border-bottom: 3px solid #d32f2f;
             padding-bottom: 10px;
             margin-bottom: 30px;
         }
 
         h2 {
-            background-color: slategrey;
-            font-size: 1.5rem;
+            color: #000000;
+            font-size: 1.6rem;
             margin-top: 30px;
             margin-bottom: 10px;
         }
 
         p {
-            margin-bottom: 15px;
+             color: #ffffff;
+            margin-bottom: 30px;
             text-align: justify;
         }
 
         ul {
             list-style-type: square;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             padding-left: 20px;
         }
 
@@ -45,27 +47,45 @@
             margin-bottom: 5px;
         }
 
+        .feedback-container {
+            margin-bottom: 30px;
+        }
+
+        /* Estilização dos botões de feedback */
+        .btn-feedback {
+            background-color: #fffbfb;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            padding: 6px 12px;
+            cursor: pointer;
+            margin-right: 8px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn-feedback:hover {
+            background-color: #ff0000;
+        }
+
         hr {
             border: 0;
-            border-top: 1px solid #e80000;
+            border-top: 1px solid #00b3ff;
             margin: 40px 0;
         }
 
         footer {
             margin-top: 50px;
             font-size: 0.9rem;
-            color: #555555;
+            color: #535151;
             text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <h1>Os Maiores Jogos da Atualidade 🎮 </h1>
+    <h1>Os Maiores Jogos da Atualidade 🎮</h1>
 
-
-
-    <h2> Roblox (★ 4.8)</h2>
+    <h2>Roblox (★ 4.8)</h2>
     <p>Muito além de um jogo tradicional, o Roblox funciona como um motor de desenvolvimento (Roblox Studio) e uma central multimídia. Ele permite que os usuários criem seus próprios jogos e faturem dinheiro real através da moeda virtual Robux. Fenômeno absoluto entre jovens e criadores.</p>
     <ul>
         <li><strong>Desenvolvedora:</strong> Roblox Corporation</li>
@@ -74,6 +94,10 @@
         <li><strong>Jogadores Ativos:</strong> +250 Milhões mensais</li>
         <li><strong>Preço:</strong> Gratuito (Compras in-game)</li>
     </ul>
+    <div class="feedback-container">
+        <button class="btn-feedback btn-like">👍 <span>0</span></button>
+        <button class="btn-feedback btn-dislike">👎 <span>0</span></button>
+    </div>
 
     <hr>
 
@@ -86,6 +110,10 @@
         <li><strong>Jogadores Ativos:</strong> +150 Milhões diários</li>
         <li><strong>Preço:</strong> Gratuito (Compras in-game)</li>
     </ul>
+    <div class="feedback-container">
+        <button class="btn-feedback btn-like">👍 <span>0</span></button>
+        <button class="btn-feedback btn-dislike">👎 <span>0</span></button>
+    </div>
 
     <hr>
 
@@ -98,6 +126,10 @@
         <li><strong>Total de Vendas:</strong> +300 Milhões de cópias</li>
         <li><strong>Preço:</strong> Pago (Varia por plataforma)</li>
     </ul>
+    <div class="feedback-container">
+        <button class="btn-feedback btn-like">👍 <span>0</span></button>
+        <button class="btn-feedback btn-dislike">👎 <span>0</span></button>
+    </div>
 
     <hr>
 
@@ -110,6 +142,10 @@
         <li><strong>Destaque:</strong> Eventos e Shows ao vivo</li>
         <li><strong>Preço:</strong> Gratuito (Compras in-game)</li>
     </ul>
+    <div class="feedback-container">
+        <button class="btn-feedback btn-like">👍 <span>0</span></button>
+        <button class="btn-feedback btn-dislike">👎 <span>0</span></button>
+    </div>
 
     <hr>
 
@@ -122,10 +158,34 @@
         <li><strong>Cenário de Competição:</strong> Campeonatos Mundiais Estáveis</li>
         <li><strong>Preço:</strong> Gratuito (Compras in-game)</li>
     </ul>
+    <div class="feedback-container">
+        <button class="btn-feedback btn-like">👍 <span>0</span></button>
+        <button class="btn-feedback btn-dislike">👎 <span>0</span></button>
+    </div>
 
     <footer>
         <p>© 2026 ArenaGames - Listagem textual informativa de jogos.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('.feedback-container').forEach(container => {
+            const likeBtn = container.querySelector('.btn-like');
+            const dislikeBtn = container.querySelector('.btn-dislike');
+            
+            const likeCount = likeBtn.querySelector('span');
+            const dislikeCount = dislikeBtn.querySelector('span');
+
+            likeBtn.addEventListener('click', () => {
+                let currentLikes = parseInt(likeCount.innerText);
+                likeCount.innerText = currentLikes + 1;
+            });
+
+            dislikeBtn.addEventListener('click', () => {
+                let currentDislikes = parseInt(dislikeCount.innerText);
+                dislikeCount.innerText = currentDislikes + 1;
+            });
+        });
+    </script>
 
 </body>
 </html>
