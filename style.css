@@ -1,0 +1,54 @@
+body {
+    max-width: 100vw;
+}
+
+header {
+    background-color: #888787;
+    color: #000000;
+    text-align: center;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+main {
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0 auto;
+    padding: 16px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+article {
+    display: flex;
+
+    border: 1px solid #183C63;
+
+    margin: 16px;
+    gap: 16px;
+    padding: 16px;
+
+    flex: 1 1 25%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+
+}
+
+
+.artigo-autor {
+    font-weight: bold;
+}
+
+.imagens-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
